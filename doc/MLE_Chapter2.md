@@ -8,30 +8,7 @@
 
 [Bayesian and frequentist reasoning in plain English](https://stats.stackexchange.com/questions/22/bayesian-and-frequentist-reasoning-in-plain-english)
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page Title</title>
-    <style>
-      /* The . with the boxed represents that it is a class */
-      .boxed {
-        background: lightgrey;
-        color: black;
-        border: 3px solid black;
-        margin: 0px auto;
-        width: auto;
-        padding: 10px;
-        border-radius: 10px;
-      }
-    </style>
-  </head>
-  <body>
-  </body>
-</html>
-
-<div class="boxed">
+```quote
 Here is how I would explain the basic difference to my grandma:
 
 I have misplaced my phone somewhere in the home. I can use the phone locator on the base of the instrument to locate the phone and when I press the phone locator the phone starts beeping.
@@ -43,10 +20,8 @@ I can hear the phone beeping. I also have a mental model which helps me identify
 
 **Bayesian Reasoning**
 I can hear the phone beeping. Now, apart from a mental model which helps me identify the area from which the sound is coming from, I also know the locations where I have misplaced the phone in the past. So, I combine my inferences using the beeps and my prior information about the locations I have misplaced the phone in the past to identify an area I must search to locate the phone.
-</div>
+```
 
-
-<br/>
 
 Let's explain this analogy in equations. 
 
