@@ -8,7 +8,7 @@
 
 [Bayesian and frequentist reasoning in plain English](https://stats.stackexchange.com/questions/22/bayesian-and-frequentist-reasoning-in-plain-english)
 
-```quote
+```matlab
 Here is how I would explain the basic difference to my grandma:
 
 I have misplaced my phone somewhere in the home. I can use the phone locator on the base of the instrument to locate the phone and when I press the phone locator the phone starts beeping.
