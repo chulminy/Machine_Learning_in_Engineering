@@ -4,26 +4,28 @@
 
 # Chapter 2. Probability: Univariate Models  
 
-## 2.1.1 What is probability? 
+## 2.1 Introduction
+### 2.1.1 What is probability? 
 
+Q. What's the difference between Baysian and frequentist reasoning? 
+ 
 [Bayesian and frequentist reasoning in plain English](https://stats.stackexchange.com/questions/22/bayesian-and-frequentist-reasoning-in-plain-english)
 
-```matlab
+---
 Here is how I would explain the basic difference to my grandma:
 
 I have misplaced my phone somewhere in the home. I can use the phone locator on the base of the instrument to locate the phone and when I press the phone locator the phone starts beeping.
 
-Problem: Which area of my home should I search?
+**Which area of my home should I search?**
 
-**Frequentist Reasoning**
-I can hear the phone beeping. I also have a mental model which helps me identify the area from which the sound is coming. Therefore, upon hearing the beep, I infer the area of my home I must search to locate the phone.
+**Frequentist Reasoning:** I can hear the phone beeping. I also have a mental model which helps me identify the area from which the sound is coming. Therefore, upon hearing the beep, I infer the area of my home I must search to locate the phone.
 
-**Bayesian Reasoning**
-I can hear the phone beeping. Now, apart from a mental model which helps me identify the area from which the sound is coming from, I also know the locations where I have misplaced the phone in the past. So, I combine my inferences using the beeps and my prior information about the locations I have misplaced the phone in the past to identify an area I must search to locate the phone.
-```
+**Bayesian Reasoning:** I can hear the phone beeping. Now, apart from a mental model which helps me identify the area from which the sound is coming from, I also know the locations where I have misplaced the phone in the past. So, I combine my inferences using the beeps and my prior information about the locations I have misplaced the phone in the past to identify an area I must search to locate the phone.
+
+---
 
 
-Let's explain this analogy in equations. 
+Let's me explain this analogy in equations. 
 
 **Frequentist Reasoning**  
 I can hear the phone beeping ($\mathcal{d_1}$). I also have a mental model $p(\mathcal{D}|\theta)$ which helps me identify the area from which the sound is coming. Therefore, upon hearing the beep, I infer the area of my home I must search to locate the phone.  We knew that a beeping sounds that you hear is likely comming from a certain location $\theta^*$ among many candidate locations:
@@ -32,10 +34,11 @@ $$ \theta^* = \underset{\theta}{\mathrm{argmax} \,}p(\mathcal{d_1}|\theta) $$
 
 If you hear a different beeping sound, you will search a different location. You will find location that maximizes your likehood function 
 
-Now, what is a prior distribution, $p(\theta)$? When you guess the location using the above strategy $p(\mathcal{D}|\theta)$, you do not consider where you often put your phone. You are only relying on beeping sound, which is your observation. However, the probabilty of the locations of your phone placement changes a lot depending on your "prior" knowledge (habit or experience in this analogy). 
+Now, what is a prior distribution, $p(\theta)$? When you guess the location using the above strategy $p(\mathcal{D}|\theta)$, you do not consider where **you often put your phone.** 
+You are only relying on beeping sound, which is your **observation**, $\mathcal{d_1}$. However, the probabilty of the locations of your phone placement changes a lot depending on your "prior" knowledge (habit or experience in this analogy). 
 
 **Bayesian Reasoning**  
-I can hear the phone beeping ($\mathcal{d_1}$). Now, apart from a mental model $p(\mathcal{D}|\theta)$ which helps me identify the area from which the sound is coming from, I also know the locations where I have misplaced the phone in the past $p(\theta)$. So, I combine my inferences using the beeps and my prior information about the locations I have misplaced the phone in the past to identify an area I must search to locate the phone.
+I can hear the phone beeping ($\mathcal{d_1}$). Now, apart from a mental model $p(\mathcal{D}|\theta)$ which helps me identify the area from which the sound is coming from, I also know the locations where I have misplaced the phone in the past $p(\theta)$. So, I combine my inferences using **the beeps and my prior information** about the locations I have misplaced the phone in the past to identify an area I must search to locate the phone.
 
 $$ p(\theta|\mathcal{D}) \propto p(\mathcal{D}|\theta)p(\theta)$$
 
@@ -44,27 +47,23 @@ As stated, the location that you first search for could be changed depending on 
 
 Note that $p(\mathcal{D})$ is a probability of hearing a specific beeping sound. This is from marginalization of all beeping sounds from all possiable location $\theta$. There is no special meaning in this problem. 
 
-One confusing concept indicates where our mental model guesses the probability of the phone location when we heard a certain beep sound (posterior) or the probability of a certain beep sound depending on the phone location (likelihood). Consider how to identify the location from a beep soud. We are using the direction and intensity of the sound to find the locations. The mental model mentioned here is just detecting a direction and distance of a beep sound and does not consider a house layout (as a prior knowledge). 
+One confusing concept indicates where our mental model guesses the probability of the phone location when we heard a certain beep sound (posterior) or the probability of a certain beep sound depending on the phone location (likelihood). Consider how to identify the location from a beep sound. We are using the direction and intensity of the sound to find the locations. The mental model mentioned here is just detecting a direction and distance of a beep sound and does not consider a house layout (as a prior knowledge). 
 
 
-### 2.1.3.6 Conditional independence of events
+#### 2.1.3.6 Conditional independence of events
 
-What's the intuitive example?   
-[Conditional Independence — The Backbone of Bayesian Networks](https://towardsdatascience.com/conditional-independence-the-backbone-of-bayesian-networks-85710f1b35b)
+Q. What's the intuitive example? [Conditional Independence — The Backbone of Bayesian Networks](https://towardsdatascience.com/conditional-independence-the-backbone-of-bayesian-networks-85710f1b35b)
 
-<div class="boxed">
+---
+Q. Let’s say A is the height of a child and B is the number of words that the child knows. It seems when A is high, B is high too. There is a single piece of information that will make A and B completely independent. What would that be?
 
-Let’s say A is the height of a child and B is the number of words that the child knows. It seems when A is high, B is high too.
+**A. The child's age**
 
-There is a single piece of information that will make A and B completely independent. What would that be?
+The height and the # of words known by the kid are NOT independent, but they are conditionally independent if you provide the kid’s age. 
 
-**The child's age**
+---
 
-The height and the # of words known by the kid are NOT independent, but they are conditionally independent if you provide the kid’s age.
-
-</div>
-
-## 2.2 Random Variables
+### 2.2 Random Variables
 
 ### 2.1.1 Discrete random variables
 
@@ -77,31 +76,25 @@ $$ p(x) \triangleq \Pr (X \leq x) $$
 
 where $X$ is a discrete random variable of which sample space is finite or countably infinite. 
 
-See "Fig2_1 - Some Discrete Distributions.ipynb"
+**Fig2_1 - Some Discrete Distributions.ipynb** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]()
 
 
+### 2.2.3 Sets of related random variables
 
-### 2.2.2 Continuous distribution function
+**Joint distribution** of two random variable:  $p(x, y) = p(X=x, Y=y)$  
+**Marginal distribution** of a random varialbe X: $p(X=x) = \sum_{y} p(X=x, Y=y) $   
+**Conditional distribution** of a random variable X: $p(y|x) = p(x,y)/p(x)$  
 
+*The term "marginal" comes from the accounting practice of writing the sums of rows and columns on the side, or margin, or a table.*
 
-## 3.2 The multivariate Gaussian (normal) distribution
+### 2.6.3 Regression
+Q. What does the semicolon mean? [What does the semicolon ; mean in a function definition](https://math.stackexchange.com/a/722256)
 
-#### Example: conditioning a 2d Gaussian
+---
+A semicolon is used to separate variables from parameters. Quite often, the terms variables and parameters are used interchangeably, but with a semicolon the meaning is that we are defining a function of the parameters that returns a function of the variables.
 
-See ["Two properties of the Gaussian distribution (from Fabian Dablander)"](https://fabiandablander.com/statistics/Two-Properties.html)
+For example, if I write $f(x1,x2,…;p1,p2,…)$ then I mean that by supplying the parameters $(p1,p2,…)$, I create a new function whose arguments are $(x1,x2,…)$.
 
-*Marginalizing means **ignoring**, and conditioning means **incorporating** information.*
-
-Let us consider a 2d example. Two random variables $X_1$ and $X_2$ are introduced and each variable is coming from a univariate Gaussian distribution with mean 
-
-
-**Convex combination**
-
-For a vector ($x_1, x_2, ...., x_n$), the convex combination is:
-$$ \alpha_1 x_1 + \alpha_2 x_2 + \alpha_3 x_3+ ... \alpha_n x_n $$ 
-where  $\alpha_i \ge 0 $ **and** $\alpha_1+ \alpha_2+ \alpha_3+ ... +\alpha_n = 1$
+---
 
 
-## Mixture models
-
-latent variables (from Latin: present participle of lateo (“lie hidden”), opposed to observable variables) are variables that are not directly observed but are rather inferred through a mathematical model from other variables that are observed (directly measured). Mathematical models that aim to explain observed variables in terms of latent variables are called latent variable models. 
