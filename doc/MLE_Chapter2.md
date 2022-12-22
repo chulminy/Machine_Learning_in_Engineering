@@ -66,7 +66,6 @@ The height and the # of words known by the kid are NOT independent, but they are
 ### 2.2 Random Variables
 
 ### 2.1.1 Discrete random variables
-
 Suppose $X$ represents some unkown quantity of interest. If the value of X is unkown and/or could change, we call it a random variable (**rv**). The set of possible values, denoted $\chi$ is known as the **sample space** or **state space**. An **event** is a set of outcomes from a given sample space. 
 
 For example, if $X$ represents the face of a dice that is rolled, so $\chi = \{1,2, ... 6\}$, the event of "seeing a 1" is denoted $X = 1$, the event of "seeing an odd number" is denoted $ X \in \{1,3,5\}$. 
@@ -76,7 +75,7 @@ $$ p(x) \triangleq \Pr (X \leq x) $$
 
 where $X$ is a discrete random variable of which sample space is finite or countably infinite. 
 
-**Fig2_1 - Some Discrete Distributions.ipynb** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]()
+[**Fig2_1 - Some Discrete Distributions.ipynb** ](https://colab.research.google.com/github/chulminy/Machine_Learning_in_Engineering/blob/main/doc/notebook/ch02/Fig2_1_Some_Discrete_Distributions.ipynb)
 
 
 ### 2.2.3 Sets of related random variables
