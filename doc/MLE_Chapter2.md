@@ -1,7 +1,3 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-  type="text/javascript">
-</script>
-
 # Chapter 2. Probability: Univariate Models  
 
 ## 2.1 Introduction
@@ -9,7 +5,7 @@
 
 Q. What's the difference between Baysian and frequentist reasoning? 
  
-[Bayesian and frequentist reasoning in plain English](https://stats.stackexchange.com/questions/22/bayesian-and-frequentist-reasoning-in-plain-english)
+See [Bayesian and frequentist reasoning in plain English](https://stats.stackexchange.com/questions/22/bayesian-and-frequentist-reasoning-in-plain-english)
 
 ---
 Here is how I would explain the basic difference to my grandma:
